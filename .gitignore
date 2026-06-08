@@ -1,0 +1,6 @@
+# .NET
+obj/
+bin/
+
+# Angular
+node_modules/
