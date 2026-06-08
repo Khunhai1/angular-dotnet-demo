@@ -58,7 +58,7 @@ chat-app/
 
 ## ✅ Phase 1 — Backend foundations
 
-- [ ] Install NuGet packages:
+- [x] Install NuGet packages:
   - `Microsoft.EntityFrameworkCore.SqlServer`
   - `Microsoft.EntityFrameworkCore.Tools`
   - `Microsoft.AspNetCore.Authentication.JwtBearer`
