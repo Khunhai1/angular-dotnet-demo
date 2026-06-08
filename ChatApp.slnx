@@ -1,2 +1,5 @@
 <Solution>
+  <Folder Name="/backend/">
+    <Project Path="backend/ChatApp.Api/ChatApp.Api.csproj" />
+  </Folder>
 </Solution>

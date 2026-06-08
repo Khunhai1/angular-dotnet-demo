@@ -66,8 +66,8 @@ chat-app/
   - `Microsoft.AspNetCore.SignalR`
   - `Microsoft.Azure.SignalR` (for the managed service)
   - `Swashbuckle.AspNetCore`
-- [ ] Models: `User`, `Conversation`, `ConversationParticipant`, `Message`
-- [ ] `DbContext` + first migration
+- [x] Models: `User`, `Conversation`, `ConversationParticipant`, `Message`
+- [x] `DbContext` + first migration
 - [ ] Layered architecture: `Controllers/` `Hubs/` `Services/` `Repositories/` `Models/` `Dtos/`
 - [ ] Configure CORS (allow `http://localhost:4200`)
 - [ ] Enable Swagger in development
