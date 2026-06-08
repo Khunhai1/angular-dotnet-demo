@@ -76,11 +76,11 @@ chat-app/
 
 ## ✅ Phase 2 — Authentication
 
-- [ ] Configure ASP.NET Core Identity
-- [ ] Endpoints: `POST /api/auth/register`, `POST /api/auth/login`, `POST /api/auth/refresh`
-- [ ] JWT generation (access token + refresh token)
-- [ ] JWT Bearer middleware
-- [ ] Test with Postman before touching the frontend
+- [x] Configure ASP.NET Core Identity
+- [x] Endpoints: `POST /api/auth/register`, `POST /api/auth/login`, `POST /api/auth/refresh`
+- [x] JWT generation (access token + refresh token)
+- [x] JWT Bearer middleware
+- [x] Test with Postman before touching the frontend
 
 ---
 
