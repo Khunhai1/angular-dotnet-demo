@@ -68,9 +68,9 @@ chat-app/
   - `Swashbuckle.AspNetCore`
 - [x] Models: `User`, `Conversation`, `ConversationParticipant`, `Message`
 - [x] `DbContext` + first migration
-- [ ] Layered architecture: `Controllers/` `Hubs/` `Services/` `Repositories/` `Models/` `Dtos/`
-- [ ] Configure CORS (allow `http://localhost:4200`)
-- [ ] Enable Swagger in development
+- [x] Layered architecture: `Controllers/` `Hubs/` `Services/` `Repositories/` `Models/` `Dtos/`
+- [x] Configure CORS (allow `http://localhost:4200`)
+- [x] Enable Swagger in development
 
 ---
 
