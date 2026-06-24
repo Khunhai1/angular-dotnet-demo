@@ -108,11 +108,12 @@ chat-app/
 
 ## ✅ Phase 5 — Angular frontend
 
-- [ ] Structure: `core/` `shared/` `features/auth` `features/chat` `features/profile`
-- [ ] `AuthService` + JWT interceptor + auth guard
-- [ ] `ApiService` (HttpClient wrapper)
+- [x] Structure: `core/` `shared/` `features/auth` `features/chat` `features/profile`
+- [x] `AuthService` + JWT interceptor + auth guard
+- [x] `ApiService` (HttpClient wrapper)
 - [ ] `SignalRService` (`@microsoft/signalr`)
-- [ ] Routes: `/login`, `/register`, `/chat`, `/chat/:conversationId`, `/profile`
+- [ ] Routes: `/login`, `/register`
+- [ ] Routes: `/chat`, `/chat/:conversationId`, `/profile`
 - [ ] Layout: sidebar (conversations list) + messages pane
 - [ ] Components: `MessageList`, `MessageInput`, `ConversationList`, `UserSearch`
 - [ ] UI choice: Angular Material OR Tailwind (Tailwind = more modern look)
