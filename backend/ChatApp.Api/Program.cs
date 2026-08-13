@@ -77,3 +77,8 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+// To make Program visible to test assembly
+public partial class Program
+{
+}
