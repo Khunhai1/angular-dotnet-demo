@@ -1,12 +1,11 @@
 import { Routes } from '@angular/router';
 import { authGuard } from './core/guards/auth.guard';
-import { LoginComponent } from './features/auth/login/login';
+import { AuthComponent } from './features/auth/auth';
 import { ChatComponent } from './features/chat/chat';
-import { RegisterComponent } from './features/auth/register/register';
 
 export const routes: Routes = [
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'login', component: AuthComponent, data: { mode: 'login' } },
+  { path: 'register', component: AuthComponent, data: { mode: 'register' } },
   { path: 'chat', component: ChatComponent, canActivate: [authGuard] },
   { path: '', redirectTo: 'login', pathMatch: 'full' },
 ];
