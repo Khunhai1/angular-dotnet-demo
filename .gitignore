@@ -14,6 +14,8 @@ project.fragment.lock.json
 
 # Test output (dotnet test / coverlet)
 TestResults/
+coverage/
+code-coverage-results.md
 
 # Build results
 [Dd]ebug/

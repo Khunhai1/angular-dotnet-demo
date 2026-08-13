@@ -21,5 +21,26 @@ jobs:
       - name: Build
         run: dotnet build ChatApp.slnx --no-restore --configuration Release
 
-      - name: Test
-        run: dotnet test backend/ChatApp.Api.Tests --no-build --configuration Release --verbosity normal
+      - name: Test with coverage
+        run: >
+          dotnet test backend/ChatApp.Api.Tests
+          --no-build --configuration Release --verbosity normal
+          --collect:"XPlat Code Coverage"
+          --results-directory ./coverage
+
+      - name: Coverage summary
+        uses: irongut/CodeCoverageSummary@v1.3.0
+        with:
+          filename: coverage/**/coverage.cobertura.xml
+          badge: true
+          format: markdown
+          output: both
+
+      - name: Add coverage to job summary
+        run: cat code-coverage-results.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/**/coverage.cobertura.xml
