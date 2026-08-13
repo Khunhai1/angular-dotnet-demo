@@ -153,6 +153,24 @@ chat-app/
 - [ ] Workflow to build + deploy the Angular frontend
 - [ ] EF Core migrations applied on startup (or via separate job)
 
+### Free-tier cost guardrails
+- [ ] Azure SQL free offer: set **"Free limit exhaustion behavior" → Auto-pause the database until next month** (NOT "Continue using with additional charges") — this is the only resource in the stack that can silently bill; everything else (F1, SignalR Free, Static Web Apps Free) hard-throttles instead of billing
+- [ ] Cap the DB's `max-size` explicitly (e.g. `az sql db update --max-size 2GB`), well under the 32 GB free allowance, so runaway writes hit a normal "database full" error instead of drifting toward the free ceiling
+- [ ] Add a nightly cleanup job (GitHub Actions cron or a free-tier Azure Function timer) that purges messages/conversations older than ~14 days — keeps storage flat regardless of public traffic, and can double as the demo-data reset job (see Phase 8)
+- [ ] Rate-limit `POST /messages` per user to stop the public demo link from being spammed
+
+---
+
+## ✅ Phase 8 — Frictionless demo experience (recruiters)
+
+> Problem: a cold visitor has to register, then create a *second* account, just to see messaging work at all. Solve it so they see real-time sync in seconds with zero signup.
+
+- [ ] Seed two demo users (e.g. `demo.alice@...` / `demo.bob@...`) with a pre-populated conversation, via a seed script/migration
+- [ ] "Try as Alice" / "Try as Bob" one-click buttons on the login screen — backend issues a JWT for the seeded user directly, no password entry
+- [ ] `/demo` route: dual-pane view, two chat windows side by side, auto-authenticated as Alice (left) and Bob (right) — type on one side, watch it arrive on the other via SignalR, no interaction required to prove real-time sync
+- [ ] "Watch live demo" CTA on the landing/login page linking to `/demo`
+- [ ] Reset demo conversation data as part of the nightly cleanup job (Phase 7) so the seeded thread doesn't get polluted or grow unbounded
+
 ---
 
 ## 📝 To showcase the project (CV / LinkedIn)
